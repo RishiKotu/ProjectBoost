@@ -13,6 +13,7 @@ public class CollisionHandler : MonoBehaviour
     AudioSource audioSource;
 
     bool isTransitioning;
+    bool collsionDisabled=false;
 
     private void Start()
     {
@@ -20,9 +21,21 @@ public class CollisionHandler : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.L))
+        {
+            LoadNextLevel();
+        }
+        else if (Input.GetKeyDown(KeyCode.C))
+        {
+            collsionDisabled = !collsionDisabled; // toggle collision
+        }
+    }
+
     void OnCollisionEnter(Collision collision)
     {
-        if (isTransitioning) { return; }
+        if (isTransitioning || collsionDisabled) { return; }
 
         else
         {
