@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/through.unity
     guid: 0e7bcd4bf1a2dbf46a0a71ce1c04d24e
+  - enabled: 1
+    path: Assets/Scenes/moving goal.unity
+    guid: d9ae746fdfe095242a0a6a066f039fd7
   m_configObjects: {}
